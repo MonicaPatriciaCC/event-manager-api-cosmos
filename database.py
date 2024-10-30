@@ -1,8 +1,14 @@
-from azure.cosmos import CosmosClient, exceptions 
-
+from azure.cosmos import CosmosClient, exceptions
+from dotenv import load_dotenv
+import os
+ 
+# Cargar las variables de entorno del archivo .env
+load_dotenv()
+  
 # Obtener las variables de entorno
-COSMOS_ENDPOINT = 'https://acddbmccnosql.documents.azure.com:443/'
-COSMOS_KEY = 'YcIMufoqJrpL7Cl0u4iCzTpaH4vMCJrrbsUdD2sJrMlnXEAsKX21CxFhuCXeztAUZpuw56jutl4pACDblzrSSQ=='
+
+COSMOS_ENDPOINT = os.getenv("COSMOS_ENDPOINT")
+COSMOS_KEY = os.getenv("COSMOS_KEY")
 DATABASE_NAME = 'test_db'
 CONTAINER_NAME = 'events'
 
